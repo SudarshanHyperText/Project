@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            text-align: center;
+        }
+        .title{
+            width: 100%;
+       
+            background-color: slategrey;
+            padding: 5px;
+        }
+        input{
+            border: 2px solid violet;
+            height: 30px;
+            border-radius: 10px;
+        }
+        button{
+            font-size: 20px;
+            border-radius: 5px;
+            margin: 10px;
+            background-color: rgb(0, 255, 85);
+        }
+        table{
+            margin: auto;
+        }
+        table, th,td{
+            border: 1px solid black;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"> 
+        <div class="title">
+            <h1>Cash Register </h1> 
+        </div>
+        <h2>Bill Amount: </h2>
+        <input type="text" id="bill">
+        <h2>Cash Given:</h2>
+        <input type="text" id="paid"> <br>
+        <button id="check"> Check </button>
+        <table>
+            <tr>
+                <th> Number Of Notes </th>
+                <th>2000</th>
+                <th>1000</th>
+                <th>500</th>
+                <th>100</th>
+                <th>50</th>
+                <th>10</th>
+                <th>5</th>
+                <th>1</th>
+            </tr>
+            <tr>
+                <td>Note</td>
+                <td id="twothousand"></td>
+                <td id="onethousand"></td>
+                <td id="fivehundred"></td>
+                <td id="onehundred"></td>
+                <td id="fifty"></td>
+                <td id="ten"></td>
+                <td id="five"></td>
+                <td id="one"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+       
+        // let bill = document.getElementById('bill');
+        // let paid = document.getElementById('paid');
+        // var num = 'unset';
+        // let twoth = document.getElementById('twothousand');
+        // num = `${(paid.value-bill.value)/2000}`;
+       
+        //     check.addEventListener('click', () =>{
+        //         twoth.innerHTML = num;
+                
+        // console.log(`give back ${paid.value-bill.value} this much amount of money`);
+        //     });
+
+        let billText= document.getElementById('bill');
+        let paidText= document.getElementById('paid');
+        if(billText.value>paidText.value){
+            alert("Jada paisa nikal");
+        }
+        
+        else{   
+
+        let twoth = document.getElementById('twothousand');
+        var num ='unset';
+
+        let oneth = document.getElementById('onethousand');
+        var num1 ='unset'; 
+
+        let fivehu = document.getElementById('fivehundred');
+        var num2 ='unset';
+
+        let onehu = document.getElementById('onehundred');
+        var num3 = 'unset';
+
+        let fifty = document.getElementById('fifty');
+        var num4 = 'unset';
+
+        let ten = document.getElementById('ten');
+        var num5 = 'unset';
+
+        let five = document.getElementById('five');
+        var num6 = 'unset';
+
+        let one = document.getElementById('one');
+        var num7 = 'unset';
+
+           
+            check.addEventListener('click', () =>{
+                var n1 =   document.getElementById('bill').value;
+                var n2 = document.getElementById('paid').value;
+                num = Math.floor((n2-n1)/2000);
+                twoth.innerHTML = num;
+                
+                
+                
+                num1 = Math.floor(((n2-n1)-2000*num)/1000);
+                oneth.innerHTML = num1;
+                
+                
+                num2 = Math.floor( ((n2-n1)-2000*num-1000*num1)/500 );
+                fivehu.innerHTML = num2;
+                
+                num3 = Math.floor( ((n2-n1)-2000*num-1000*num1-500*num2)/100);
+                onehu.innerHTML = num3;
+                
+                num4 = Math.floor( ((n2-n1)-2000*num-1000*num1-500*num2 - 100*num3)/50);
+                fifty.innerHTML = num4;
+                
+                num5 = Math.floor( ((n2-n1)-2000*num-1000*num1-500*num2 - 100*num3 -50*num4)/10);
+                ten.innerHTML = num5;
+                
+                num6 = Math.floor( ((n2-n1)-2000*num-1000*num1-500*num2 - 100*num3 -50*num4 -10*num5)/5);
+                five.innerHTML = num6;
+                
+                num7 = Math.floor( ((n2-n1)-2000*num-1000*num1-500*num2 - 100*num3 -50*num4 - 10*num5 -5*num6)/1);
+                one.innerHTML = num7;
+              
+            })
+            
+        }
+            
+            
+            </script>
+            </body>
+            </html>
