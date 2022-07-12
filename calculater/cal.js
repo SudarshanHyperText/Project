@@ -15,7 +15,7 @@ for(item of btn){
             screen.value = eval(screenvalue);
         }
         else if(btnText == '%'){
-            screenvalue = 'Chutya percentage tuja tu kad'
+            screenvalue = 'sorry we are working on this'
             screen.value= screenvalue;
         }
         else{
